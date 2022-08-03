@@ -45,3 +45,5 @@ def validate_data(values):
         print(f"Invalid data: {e}, please try again.\n")
         return False
     return True
+
+get_students_marks()
