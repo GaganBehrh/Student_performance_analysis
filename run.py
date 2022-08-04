@@ -21,9 +21,7 @@ def get_students_marks():
         print("Please enter the marks for 5 students in spanish subject")
         print("Data should be 5 numbers, separated by commas.")
         print("Example: 20,30,40,50,60\n")
-
         data_str = input("Enter your data here: ")
-
         sales_data = data_str.split(",")
 
         if validate_data(sales_data):
@@ -54,26 +52,21 @@ def update_student_worksheet(data,worksheet):
 
 def student_total_score():
     """to get the entries from each column and calculate the percentage of each student"""
-    sales=SHEET.worksheet("student")
-    columns=[]
-    for index in range(1,6):
-        column=sales.col_values(index)
-        columns.append(column)
-    print(columns)
+    student=SHEET.worksheet("student").get_all_values()
     print("Calculating stock data")
+    print(student)
     student_total=[]
-    for eachColumn in columns :
+    for eachColumn in student:
         int_column=[int(num) for num in eachColumn]
         average=sum(int_column)/len(int_column)
         percentage=average*1.1
         student_total.append(round(percentage))
-    return percentage
+    print(student_total)
 
 def main():
     student_spanish_marks=get_students_marks()
     spanish_data=[int(marks) for marks in student_spanish_marks]
     update_student_worksheet(spanish_data,"student")
-    total_score=student_total_score()
-    print(total_score)
+    student_total_score()
 
 main()
