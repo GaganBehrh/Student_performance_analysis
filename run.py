@@ -1,6 +1,8 @@
 import gspread
 from google.oauth2.service_account import Credentials
-
+from pandas import ExcelWriter
+from pandas import ExcelFile 
+import pandas as pd
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
@@ -53,16 +55,16 @@ def update_student_worksheet(data,worksheet):
 def student_total_score():
     """to get the entries from each column and calculate the percentage of each student"""
     student=SHEET.worksheet("student").get_all_values()
-    print("Calculating stock data")
-    print(student)
-    student_total=[]
-    for eachColumn in student:
-        int_column=[int(num) for num in eachColumn]
-        average=sum(int_column)/len(int_column)
-        percentage=average*1.1
-        student_total.append(round(percentage))
-    print(student_total)
-
+    print("Calculating student marks")
+    #print(student)
+    df = pd.DataFrame(student)
+    print(df)
+    
+   # sum_column = df.sum(axis=0)
+    #print (sum_column)
+    
+   
+    
 def main():
     student_spanish_marks=get_students_marks()
     spanish_data=[int(marks) for marks in student_spanish_marks]
