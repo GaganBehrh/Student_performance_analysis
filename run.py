@@ -50,8 +50,30 @@ def update_student_worksheet(data,worksheet):
     update_worksheet=SHEET.worksheet(worksheet)
     update_worksheet.append_row(data)
     print(f"{worksheet} updated successfully")
-        
 
-student_spanish_marks=get_students_marks()
-spanish_data=[int(marks) for marks in student_spanish_marks]
-update_student_worksheet(spanish_data,"student")
+
+def student_total_score():
+    """to get the entries from each column and calculate the percentage of each student"""
+    sales=SHEET.worksheet("student")
+    columns=[]
+    for index in range(1,6):
+        column=sales.col_values(index)
+        columns.append(column)
+    print(columns)
+    print("Calculating stock data")
+    student_total=[]
+    for eachColumn in columns :
+        int_column=[int(num) for num in eachColumn]
+        average=sum(int_column)/len(int_column)
+        percentage=average*1.1
+        student_total.append(round(percentage))
+    return percentage
+
+def main():
+    student_spanish_marks=get_students_marks()
+    spanish_data=[int(marks) for marks in student_spanish_marks]
+    update_student_worksheet(spanish_data,"student")
+    total_score=student_total_score()
+    print(total_score)
+
+main()
