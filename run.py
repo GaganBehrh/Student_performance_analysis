@@ -19,8 +19,8 @@ def get_students_marks():
     """
     while True:
         print("Please enter the marks for 5 students in spanish subject")
-        print("Data should be Spamish followed by 5 numbers, separated by commas.")
-        print("Example: Spanish,20,30,40,50,60\n")
+        print("Data should be 5 numbers, separated by commas.")
+        print("Example: 20,30,40,50,60\n")
 
         data_str = input("Enter your data here: ")
 
@@ -36,9 +36,9 @@ def validate_data(values):
     """
     """
     try:
-        if len(values) != 6:
+        if len(values) != 5:
             raise ValueError(
-                f"Exactly 6 values required, you provided {len(values)}"
+                f"Exactly 5 values required, you provided {len(values)}"
             )
     except ValueError as e:
         print(f"Invalid data: {e}, please try again.\n")
@@ -53,5 +53,5 @@ def update_student_worksheet(data,worksheet):
         
 
 student_spanish_marks=get_students_marks()
-spanish_data=[int(marks) for marks in range(0,len(student_spanish_marks))]
+spanish_data=[int(marks) for marks in student_spanish_marks]
 update_student_worksheet(spanish_data,"student")
