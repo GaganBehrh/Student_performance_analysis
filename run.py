@@ -74,7 +74,7 @@ def student_total_score():
             if j == 0:
                 continue
             student.append(int(row[i]))
-            new_list.append(sum(student))
+        new_list.append(sum(student))
     print(new_list)
 
     
