@@ -54,21 +54,49 @@ def update_student_worksheet(data,worksheet):
 
 def student_total_score():
     """to get the entries from each column and calculate the percentage of each student"""
-    student=SHEET.worksheet("student").get_all_values()
-    student_total=[]
+    student_data=SHEET.worksheet("student").get_all_values()
+    print(student_data)
+    #student_total=[]
     print("Calculating student marks")
-    for i in range(1,len(student)):
-        student_score=SHEET.worksheet("student").col_values(i)
+    #new_data = [[row[0] for row in student_data] for student in student_data]
+    #print(new_data)
+    # new_list = []
+    # for row in student_data:
+    #     student = []
+    #     for i in row:
+    #         student.append(i)
+    #     new_list.append(student)
+    num_students = len(student_data[0])
+    new_list = []
+    for i in range(0, num_students):
+        student = []
+        for j, row in enumerate(student_data):
+            if j == 0:
+                continue
+            student.append(int(row[i]))
+            new_list.append(sum(student))
+    print(new_list)
+
+    
+    
+
+    # for item in student_data:
+    #     for row in student_data:
+    #         print(item[row])
+    #for i in range(2,len(student)):
+        #if i==0:
+         #   continue
+        #student_score=SHEET.worksheet("student").row_values(i)
         #student_sum=sum(SHEET.worksheet("student").col_values(i))
-        print(student_score)
+        #print(student_score)
         #student_total.append(student_sum)
         #print(student_total)
     #print(student)
-    df = pd.DataFrame(student)
-    print(df)
+    #df = pd.DataFrame(student)
     #print(df)
-    sum_column = df.sum(axis=0)
-    print (sum_column)
+    #print(df)
+    #sum_column = df.sum(axis=0)
+    #print (sum_column)
     
 def main():
     student_spanish_marks=get_students_marks()
