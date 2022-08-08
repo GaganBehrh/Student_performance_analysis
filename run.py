@@ -56,16 +56,7 @@ def student_total_score():
     """to get the entries from each column and calculate the percentage of each student"""
     student_data=SHEET.worksheet("student").get_all_values()
     print(student_data)
-    #student_total=[]
-    print("Calculating student marks")
-    #new_data = [[row[0] for row in student_data] for student in student_data]
-    #print(new_data)
-    # new_list = []
-    # for row in student_data:
-    #     student = []
-    #     for i in row:
-    #         student.append(i)
-    #     new_list.append(student)
+    print("Calculating student total marks")
     num_students = len(student_data[0])
     new_list = []
     for i in range(0, num_students):
@@ -77,26 +68,6 @@ def student_total_score():
         new_list.append(sum(student))
     print(new_list)
 
-    
-    
-
-    # for item in student_data:
-    #     for row in student_data:
-    #         print(item[row])
-    #for i in range(2,len(student)):
-        #if i==0:
-         #   continue
-        #student_score=SHEET.worksheet("student").row_values(i)
-        #student_sum=sum(SHEET.worksheet("student").col_values(i))
-        #print(student_score)
-        #student_total.append(student_sum)
-        #print(student_total)
-    #print(student)
-    #df = pd.DataFrame(student)
-    #print(df)
-    #print(df)
-    #sum_column = df.sum(axis=0)
-    #print (sum_column)
     
 def main():
     student_spanish_marks=get_students_marks()
