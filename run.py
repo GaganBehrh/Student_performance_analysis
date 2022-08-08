@@ -81,16 +81,17 @@ def maxScore(scoreList):
     to find the max score in an array
     """
     max=scoreList[0]
-    maxIndex=0
+    maxScoreIndex=0
     for score in range(0,len(scoreList)):
         if(max<scoreList[score]):
           max=scoreList[score]
-    print(f"student number is {score} with max score of{max}")         
+          maxScoreIndex=score+1
+    print(f"student number with max score is student{maxScoreIndex} with max score of {max}")         
        
 def main():
-    #studentSpanishMarks=getStudentsMarks()
-    #spanishData=[int(marks) for marks in studentSpanishMarks]
-    #updateStudentWorksheet(spanishData,"student")
+    studentSpanishMarks=getStudentsMarks()
+    spanishData=[int(marks) for marks in studentSpanishMarks]
+    updateStudentWorksheet(spanishData,"student")
     totalStudentScore=studentTotalScore()
     print(totalStudentScore)
     maxScore(totalStudentScore)
