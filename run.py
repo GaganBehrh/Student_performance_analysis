@@ -34,6 +34,7 @@ def getStudentsMarks():
 
 def validateData(values):
     """
+    to validate the data
     """
     try:
         if len(values) != 5:
@@ -46,6 +47,9 @@ def validateData(values):
     return True
 
 def updateStudentWorksheet(data,worksheet):
+    """
+    to update the worksheet
+    """
     print(f"Updating the worksheet {worksheet}")
     update_worksheet=SHEET.worksheet(worksheet)
     update_worksheet.append_row(data)
@@ -53,7 +57,9 @@ def updateStudentWorksheet(data,worksheet):
 
 
 def studentTotalScore():
-    """to get the entries from each column and calculate the sum of marks for each student"""
+    """
+    to get the entries from each column and calculate the sum of marks for each student
+    """
     student_data=SHEET.worksheet("student").get_all_values()
     print(student_data)
     print("Calculating student total marks")
@@ -71,21 +77,22 @@ def studentTotalScore():
     return new_list
 
 def maxScore(scoreList):
-    max=scoreList[0];
+    """
+    to find the max score in an array
+    """
+    max=scoreList[0]
+    maxIndex=0
     for score in range(0,len(scoreList)):
         if(max<scoreList[score]):
           max=scoreList[score]
-    print(max)         
-   
-
-    
+    print(f"student number is {score} with max score of{max}")         
+       
 def main():
-   # studentSpanishMarks=getStudentsMarks()
+    #studentSpanishMarks=getStudentsMarks()
     #spanishData=[int(marks) for marks in studentSpanishMarks]
     #updateStudentWorksheet(spanishData,"student")
     totalStudentScore=studentTotalScore()
     print(totalStudentScore)
     maxScore(totalStudentScore)
-
 
 main()
