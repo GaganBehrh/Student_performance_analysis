@@ -59,6 +59,8 @@ def studentTotalScore():
     to get the entries from each column and calculate the sum of marks for each student
     """
     print("Calculating student total marks")
+    grade=''
+    
     #to get the number of students
     student_data=SHEET.worksheet("student").get_all_values()
     num_students = len(student_data[0])
@@ -74,13 +76,13 @@ def studentTotalScore():
     max=new_list[0]
     maxScoreIndex=0
     for score in range(0,len(new_list)):
-        if(max<new_list[score]):
+        if(max<=new_list[score]):
           max=new_list[score]
           avg=max/(len(student))
+          print(avg)
           maxScoreIndex=score+1
-    print(f"student number with max score is student{maxScoreIndex} with max score of {max} and the avg is {avg} ") 
-           
-       
+          
+    
 def main():
 
     print("Welcome to Student performance analysis")
