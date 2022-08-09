@@ -14,6 +14,14 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('Student_analysis')
 
+def welcome_message():
+    print("Welcome to Student performance analysis")
+    print("What would like to perform?")
+    print("1. See the existing Marksheet")
+    print("2.Enter New Data")
+    print("3.Get Averages/percentage for the students")
+    print("4.Show updated results")
+
 
 def getStudentsMarks():
     """
@@ -23,8 +31,12 @@ def getStudentsMarks():
         print("Please enter the marks for 5 students in spanish subject")
         print("Data should be 5 numbers, separated by commas.")
         print("Example: 20,30,40,50,60\n")
-        dataStr = input("Enter your data here: ")
-        salesData = dataStr.split(",")
+        data_str1 = input("Enter your data here for Joe: ")
+        data_str2 = input("Enter your data here for Ross: ")
+        data_str3 = input("Enter your data here for Racheal: ")
+        data_str4 = input("Enter your data here for Monica: ")
+        data_str5 = input("Enter your data here for Christine: ")
+        #salesData = dataStr.split(",")
 
         if validateData(salesData):
             print("Data is valid!")
@@ -89,6 +101,7 @@ def maxScore(scoreList):
     print(f"student number with max score is student{maxScoreIndex} with max score of {max}")         
        
 def main():
+    welcome_message()
     studentSpanishMarks=getStudentsMarks()
     spanishData=[int(marks) for marks in studentSpanishMarks]
     updateStudentWorksheet(spanishData,"student")
