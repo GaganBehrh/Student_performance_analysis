@@ -14,41 +14,22 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('Student_analysis')
 
-def welcome_message(a):
-    print("Welcome to Student performance analysis")
-    print("What would like to perform?")
-    print("1. See the existing Marksheet")
-    print("2.Enter New Data")
-    print("3.Get Averages/percentage for the students")
-    print("4.Show updated results")
-    choice=input("Please Enter your choice")
-    print("Your choice is"+choice)
-    return choice
-
 def getStudentsMarks():
-    """
-    Gets the marks of the student
-    """
-    while True:
-        print("Please enter the marks for 5 students individually")
-        data_str1 = input("Enter your data here for Joe: ")
-        data_str2 = input("Enter your data here for Ross: ")
-        data_str3 = input("Enter your data here for Racheal: ")
-        data_str4 = input("Enter your data here for Monica: ")
-        data_str5 = input("Enter your data here for Christine: ")
-        sales_data=[]
-        sales_data.append(data_str1)
-        sales_data.append(data_str2)
-        sales_data.append(data_str3)
-        sales_data.append(data_str4)
-        sales_data.append(data_str5)
-        print(sales_data)
-
-
-        if validateData(sales_data):
-            print("Data is valid!")
-            break
-
+    print("Please enter the marks for 5 students individually")
+    data_str1 = input("Enter your data here for Joe: ")
+    data_str2 = input("Enter your data here for Ross: ")
+    data_str3 = input("Enter your data here for Racheal: ")
+    data_str4 = input("Enter your data here for Monica: ")
+    data_str5 = input("Enter your data here for Christine: ")
+    sales_data=[]
+    sales_data.append(data_str1)
+    sales_data.append(data_str2)
+    sales_data.append(data_str3)
+    sales_data.append(data_str4)
+    sales_data.append(data_str5)
+    print(sales_data)
+    if validateData(sales_data):
+        print("Data is valid!")
     return sales_data
 
 def validateData(values):
@@ -85,6 +66,7 @@ def studentTotalScore():
     """
     print("Calculating student total marks")
     #to get the number of students
+    student_data=SHEET.worksheet("student").get_all_values()
     num_students = len(student_data[0])
     new_list = []
     for i in range(0, num_students):
@@ -111,14 +93,22 @@ def maxScore(scoreList):
            
        
 def main():
-    
-    selected_answer= welcome_message()
-    if(selected_answer==1):
+
+    print("Welcome to Student performance analysis")
+    print("What would like to perform?")
+    print("1. See the existing Marksheet")
+    print("2.Enter New Data")
+    print("3.Get Averages/percentage for the students")
+    print("4.Show updated results")
+    choice=int(input("Please Enter your choice"))
+    totalStudentScore=[]
+   
+    if(choice==1):
         show_data()
-    elif (selected_answer==2):
+    elif (choice==2):
         studentSpanishMarks=getStudentsMarks() 
         spanishData=[int(marks) for marks in studentSpanishMarks]
-    elif (selected_answer==3):
+    elif (choice==3):
         totalStudentScore=studentTotalScore()
         print(totalStudentScore)
         maxScore(totalStudentScore)
@@ -127,5 +117,4 @@ def main():
         spanishData=[int(marks) for marks in studentSpanishMarks]
         updateStudentWorksheet(spanishData,"student")
     
-
 main()
