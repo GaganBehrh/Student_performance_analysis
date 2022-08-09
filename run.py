@@ -16,11 +16,21 @@ SHEET = GSPREAD_CLIENT.open('Student_analysis')
 
 def getStudentsMarks():
     print("Please enter the marks for 5 students individually")
-    data_str1 = input("Enter your data here for Joe: ")
-    data_str2 = input("Enter your data here for Ross: ")
-    data_str3 = input("Enter your data here for Racheal: ")
-    data_str4 = input("Enter your data here for Monica: ")
-    data_str5 = input("Enter your data here for Christine: ")
+    data_str1 = int(input("Enter your data here for Joe:"))
+    data_str2 = int(input("Enter your data here for Ross: "))
+    data_str3 = int(input("Enter your data here for Racheal: "))
+    data_str4 = int(input("Enter your data here for Monica: "))
+    data_str5 = int(input("Enter your data here for Christine: "))
+    if data_str1>100 or data_str1<0:
+        print("Data not valid")
+    elif data_str2>100 or data_str2<0:
+        print("Data not valid")
+    elif data_str3>100 or data_str3<0:
+        print("Data not valid")
+    elif data_str4>100 or data_str4<0:
+        print("Data not valid")
+    elif data_str5>100 or data_str5<0:
+        print("Data not valid")   
     sales_data=[]
     sales_data.append(data_str1)
     sales_data.append(data_str2)
@@ -28,14 +38,9 @@ def getStudentsMarks():
     sales_data.append(data_str4)
     sales_data.append(data_str5)
     print(sales_data)
-    #if validateData((sales_data)):
-       # print("Data is valid!")
     return sales_data
 
-#def validateData(values):
- #   [int(value) for value in values]
-  #  if value<0:
-   #  print("value should be greater than 0")
+print("value should be greater than 0")
        
             
 def updateStudentWorksheet(data,worksheet):
@@ -91,7 +96,6 @@ def studentTotalScore():
           
     
 def main():
-
     print("Welcome to Student performance analysis")
     print("What would like to perform?")
     print("1. See the existing Marksheet")
@@ -100,7 +104,6 @@ def main():
     print("4.Show updated results")
     choice=int(input("Please Enter your choice"))
     totalStudentScore=[]
-   
     if(choice==1):
         show_data()
     elif (choice==2):
@@ -108,8 +111,6 @@ def main():
         spanishData=[int(marks) for marks in studentSpanishMarks]
     elif (choice==3):
         totalStudentScore=studentTotalScore()
-        
-       # maxScore(totalStudentScore)
     elif (choice==4):
         studentSpanishMarks=getStudentsMarks()
         spanishData=[int(marks) for marks in studentSpanishMarks]
