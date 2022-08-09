@@ -37,12 +37,12 @@ def validateData(values):
     to validate the data
     """
     try:
-        if len(values) != 5:
+        if value==0 or value<0 or value>100:
             raise ValueError(
-                f"Exactly 5 values required, you provided {len(values)}"
+                f"The choice has to be in between 1 and 4 "
             )
     except ValueError as e:
-        print(f"Invalid data: {e}, please try again.\n")
+        print(f"Invalid value: {e}, please try again.\n")
         return False
     return True
 
@@ -114,9 +114,11 @@ def main():
         totalStudentScore=studentTotalScore()
         print(totalStudentScore)
         maxScore(totalStudentScore)
-    else:
+    elif (choice==4):
         studentSpanishMarks=getStudentsMarks()
         spanishData=[int(marks) for marks in studentSpanishMarks]
         updateStudentWorksheet(spanishData,"student")
+    else:
+        print("Invalid choice, it has to be in between 1 and 4, no zeros or negative values are allowed")
     
 main()
