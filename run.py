@@ -79,8 +79,9 @@ def studentTotalScore():
         if(max<=new_list[score]):
           max=new_list[score]
           avg=max/(len(student))
-          print(avg)
           maxScoreIndex=score+1
+          print(avg)
+        
           
     
 def main():
