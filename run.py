@@ -80,7 +80,14 @@ def studentTotalScore():
           max=new_list[score]
           avg=max/(len(student))
           maxScoreIndex=score+1
-          print(avg)
+          if(avg<65):
+            grade='C'
+          elif(avg<75 and avg>65):
+            grade='B'
+          else:
+            grade='A'
+
+    print(f"Max score is {max} and the percentage is {avg}% with {grade} grade of student {maxScoreIndex}")
         
           
     
@@ -102,7 +109,7 @@ def main():
         spanishData=[int(marks) for marks in studentSpanishMarks]
     elif (choice==3):
         totalStudentScore=studentTotalScore()
-        print(totalStudentScore)
+        
        # maxScore(totalStudentScore)
     elif (choice==4):
         studentSpanishMarks=getStudentsMarks()
