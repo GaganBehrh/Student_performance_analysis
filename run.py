@@ -14,7 +14,7 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('Student_analysis')
 
-def welcome_message():
+def welcome_message(a):
     print("Welcome to Student performance analysis")
     print("What would like to perform?")
     print("1. See the existing Marksheet")
@@ -22,9 +22,8 @@ def welcome_message():
     print("3.Get Averages/percentage for the students")
     print("4.Show updated results")
     choice=input("Please Enter your choice")
+    print("Your choice is"+choice)
     return choice
-
-
 
 def getStudentsMarks():
     """
