@@ -28,21 +28,21 @@ def getStudentsMarks():
     sales_data.append(data_str4)
     sales_data.append(data_str5)
     print(sales_data)
-    if validateData(sales_data):
+    if validateData((sales_data)):
         print("Data is valid!")
     return sales_data
 
 def validateData(values):
-    """
-    to validate the data
-    """
+    value=0
     try:
-        if value==0 or value<0 or value>100:
-            raise ValueError(
-                f"The choice has to be in between 1 and 4 "
-            )
+        [int(value) for value in values]
+        for value in values:
+            if values[value]<0:
+                raise ValueError(
+                    f"Exactly 6 values required, you provided {len(values)}"
+                )
     except ValueError as e:
-        print(f"Invalid value: {e}, please try again.\n")
+        print(f"Invalid data: {e}, please try again.\n")
         return False
     return True
 
