@@ -21,6 +21,9 @@ def welcome_message():
     print("2.Enter New Data")
     print("3.Get Averages/percentage for the students")
     print("4.Show updated results")
+    choice=input("Please Enter your choice")
+    return choice
+
 
 
 def getStudentsMarks():
@@ -72,13 +75,15 @@ def updateStudentWorksheet(data,worksheet):
     update_worksheet.append_row(data)
     print(f"{worksheet} updated successfully")
 
+def show_data():
+    student_data=SHEET.worksheet("student").get_all_values()
+    print(student_data)
+
 
 def studentTotalScore():
     """
     to get the entries from each column and calculate the sum of marks for each student
     """
-    student_data=SHEET.worksheet("student").get_all_values()
-    print(student_data)
     print("Calculating student total marks")
     #to get the number of students
     num_students = len(student_data[0])
@@ -103,15 +108,25 @@ def maxScore(scoreList):
         if(max<scoreList[score]):
           max=scoreList[score]
           maxScoreIndex=score+1
-    print(f"student number with max score is student{maxScoreIndex} with max score of {max}")         
+    print(f"student number with max score is student{maxScoreIndex} with max score of {max}") 
+           
        
 def main():
-    welcome_message()
-    studentSpanishMarks=getStudentsMarks()
-    spanishData=[int(marks) for marks in studentSpanishMarks]
-    updateStudentWorksheet(spanishData,"student")
-    totalStudentScore=studentTotalScore()
-    print(totalStudentScore)
-    maxScore(totalStudentScore)
+    
+    selected_answer= welcome_message()
+    if(selected_answer==1):
+        show_data()
+    elif (selected_answer==2):
+        studentSpanishMarks=getStudentsMarks() 
+        spanishData=[int(marks) for marks in studentSpanishMarks]
+    elif (selected_answer==3):
+        totalStudentScore=studentTotalScore()
+        print(totalStudentScore)
+        maxScore(totalStudentScore)
+    else:
+        studentSpanishMarks=getStudentsMarks()
+        spanishData=[int(marks) for marks in studentSpanishMarks]
+        updateStudentWorksheet(spanishData,"student")
+    
 
 main()
