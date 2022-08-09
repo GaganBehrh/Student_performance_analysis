@@ -28,24 +28,16 @@ def getStudentsMarks():
     sales_data.append(data_str4)
     sales_data.append(data_str5)
     print(sales_data)
-    if validateData((sales_data)):
-        print("Data is valid!")
+    #if validateData((sales_data)):
+       # print("Data is valid!")
     return sales_data
 
-def validateData(values):
-    value=0
-    try:
-        [int(value) for value in values]
-        for value in values:
-            if values[value]<0:
-                raise ValueError(
-                    f"Exactly 6 values required, you provided {len(values)}"
-                )
-    except ValueError as e:
-        print(f"Invalid data: {e}, please try again.\n")
-        return False
-    return True
-
+#def validateData(values):
+ #   [int(value) for value in values]
+  #  if value<0:
+   #  print("value should be greater than 0")
+       
+            
 def updateStudentWorksheet(data,worksheet):
     """
     to update the worksheet
@@ -76,7 +68,6 @@ def studentTotalScore():
         for j, row in enumerate(student_data):
             if j == 0:
                 continue
-            #to append each row to the student list
             student.append(int(row[i]))
         new_list.append(sum(student))
     return new_list
@@ -91,7 +82,7 @@ def maxScore(scoreList):
         if(max<scoreList[score]):
           max=scoreList[score]
           maxScoreIndex=score+1
-    print(f"student number with max score is student{maxScoreIndex} with max score of {max}") 
+    print(f"student number with max score is student{maxScoreIndex} with max score of {max} ") 
            
        
 def main():
