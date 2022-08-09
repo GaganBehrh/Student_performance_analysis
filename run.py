@@ -50,13 +50,15 @@ def updateStudentWorksheet(data,worksheet):
     """
     to update the worksheet
     """
-    print(f"Updating the worksheet {worksheet}")
     update_worksheet=SHEET.worksheet(worksheet)
     update_worksheet.append_row(data)
-    print(f"{worksheet} updated successfully")
+    print("Here is the updated data")
+    student_data=SHEET.worksheet("student").get_all_values()
+    print(student_data)
 
 def show_data():
     student_data=SHEET.worksheet("student").get_all_values()
+    print("Here is the existing data")
     print(student_data)
 
 
