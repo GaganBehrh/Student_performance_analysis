@@ -22,15 +22,15 @@ def getStudentsMarks():
     data_str4 = int(input("Enter your data here for Monica: "))
     data_str5 = int(input("Enter your data here for Christine: "))
     if data_str1>100 or data_str1<0:
-        print("Data not valid")
+        print("Data not valid, it cannot be negative or greater than 100, please restart")
     elif data_str2>100 or data_str2<0:
-        print("Data not valid")
+        print("Data not valid, it cannot be negative or greater than 100, please restart")
     elif data_str3>100 or data_str3<0:
-        print("Data not valid")
+        print("Data not valid, it cannot be negative or greater than 100, please restart")
     elif data_str4>100 or data_str4<0:
-        print("Data not valid")
+        print("Data not valid, it cannot be negative or greater than 100, please restart")
     elif data_str5>100 or data_str5<0:
-        print("Data not valid")   
+        print("Data not valid, it cannot be negative or greater than 100, please restartt")   
     sales_data=[]
     sales_data.append(data_str1)
     sales_data.append(data_str2)
