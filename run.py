@@ -28,21 +28,26 @@ def getStudentsMarks():
     Gets the marks of the student
     """
     while True:
-        print("Please enter the marks for 5 students in spanish subject")
-        print("Data should be 5 numbers, separated by commas.")
-        print("Example: 20,30,40,50,60\n")
+        print("Please enter the marks for 5 students individually")
         data_str1 = input("Enter your data here for Joe: ")
         data_str2 = input("Enter your data here for Ross: ")
         data_str3 = input("Enter your data here for Racheal: ")
         data_str4 = input("Enter your data here for Monica: ")
         data_str5 = input("Enter your data here for Christine: ")
-        #salesData = dataStr.split(",")
+        sales_data=[]
+        sales_data.append(data_str1)
+        sales_data.append(data_str2)
+        sales_data.append(data_str3)
+        sales_data.append(data_str4)
+        sales_data.append(data_str5)
+        print(sales_data)
 
-        if validateData(salesData):
+
+        if validateData(sales_data):
             print("Data is valid!")
             break
 
-    return salesData
+    return sales_data
 
 def validateData(values):
     """
