@@ -70,19 +70,15 @@ def studentTotalScore():
                 continue
             student.append(int(row[i]))
         new_list.append(sum(student))
-    return new_list
-
-def maxScore(scoreList):
-    """
-    to find the max score in an array
-    """
-    max=scoreList[0]
+    print(new_list)
+    max=new_list[0]
     maxScoreIndex=0
-    for score in range(0,len(scoreList)):
-        if(max<scoreList[score]):
-          max=scoreList[score]
+    for score in range(0,len(new_list)):
+        if(max<new_list[score]):
+          max=new_list[score]
+          avg=max/(len(student))
           maxScoreIndex=score+1
-    print(f"student number with max score is student{maxScoreIndex} with max score of {max} ") 
+    print(f"student number with max score is student{maxScoreIndex} with max score of {max} and the avg is {avg} ") 
            
        
 def main():
@@ -104,7 +100,7 @@ def main():
     elif (choice==3):
         totalStudentScore=studentTotalScore()
         print(totalStudentScore)
-        maxScore(totalStudentScore)
+       # maxScore(totalStudentScore)
     elif (choice==4):
         studentSpanishMarks=getStudentsMarks()
         spanishData=[int(marks) for marks in studentSpanishMarks]
