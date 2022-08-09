@@ -86,7 +86,6 @@ def studentTotalScore():
             grade='B'
           else:
             grade='A'
-
     print(f"Max score is {max} and the percentage is {avg}% with {grade} grade of student {maxScoreIndex}")
         
           
