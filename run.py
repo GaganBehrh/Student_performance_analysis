@@ -37,7 +37,7 @@ def getStudentsMarks():
     sales_data.append(data_str3)
     sales_data.append(data_str4)
     sales_data.append(data_str5)
-    print(sales_data)
+    print(f"The data you entered is {sales_data}")
     return sales_data
 
 print("value should be greater than 0")
@@ -54,6 +54,9 @@ def updateStudentWorksheet(data,worksheet):
     print(student_data)
 
 def show_data():
+    """
+    to show the existing data
+    """
     student_data=SHEET.worksheet("student").get_all_values()
     print("Here is the existing data")
     print(student_data)
@@ -63,9 +66,8 @@ def studentTotalScore():
     """
     to get the entries from each column and calculate the sum of marks for each student
     """
-    print("Calculating student total marks")
+    print("Here are the total marks obtained by each student")
     grade=''
-    
     #to get the number of students
     student_data=SHEET.worksheet("student").get_all_values()
     num_students = len(student_data[0])
@@ -91,16 +93,16 @@ def studentTotalScore():
             grade='B'
           else:
             grade='A'
-    print(f"Max score is {max} and the percentage is {avg}% with {grade} grade of student {maxScoreIndex}")
+    print(f"Here are the details of the topper of the class: student{maxScoreIndex}, Max score :{max}, Percentage:{avg}%, Grade:{grade}")
         
           
     
 def main():
     print("Welcome to Student performance analysis")
     print("What would like to perform?")
-    print("1. See the existing Marksheet")
+    print("1.See the existing Marksheet")
     print("2.Enter New Data")
-    print("3.Get Averages/percentage for the students")
+    print("3.Get Averages/percentage for the students and know the grade of the student")
     print("4.Show updated results")
     choice=int(input("Please Enter your choice"))
     totalStudentScore=[]
@@ -110,7 +112,7 @@ def main():
         studentSpanishMarks=getStudentsMarks() 
         spanishData=[int(marks) for marks in studentSpanishMarks]
     elif (choice==3):
-        totalStudentScore=studentTotalScore()
+        studentTotalScore()
     elif (choice==4):
         studentSpanishMarks=getStudentsMarks()
         spanishData=[int(marks) for marks in studentSpanishMarks]
