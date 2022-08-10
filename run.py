@@ -14,7 +14,7 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('Student_analysis')
 
-def getStudentsMarks():
+def get_students_marks():
     print("Please enter the marks for 5 students individually")
     data_str1 = int(input("Enter your data here for Joe:"))
     data_str2 = int(input("Enter your data here for Ross: "))
@@ -43,7 +43,7 @@ def getStudentsMarks():
 print("value should be greater than 0")
        
             
-def updateStudentWorksheet(data,worksheet):
+def update_student_worksheet(data,worksheet):
     """
     to update the worksheet
     """
@@ -62,7 +62,7 @@ def show_data():
     print(student_data)
 
 
-def studentTotalScore():
+def student_total_score():
     """
     to get the entries from each column and calculate the sum of marks for each student
     """
@@ -105,18 +105,18 @@ def main():
     print("3.Get Averages/percentage for the students and know the grade of the student")
     print("4.Show updated results")
     choice=int(input("Please Enter your choice"))
-    totalStudentScore=[]
+    total_student_score=[]
     if(choice==1):
         show_data()
     elif (choice==2):
-        studentSpanishMarks=getStudentsMarks() 
+        studentSpanishMarks=get_students_marks() 
         spanishData=[int(marks) for marks in studentSpanishMarks]
     elif (choice==3):
-        studentTotalScore()
+        student_total_score()
     elif (choice==4):
-        studentSpanishMarks=getStudentsMarks()
-        spanishData=[int(marks) for marks in studentSpanishMarks]
-        updateStudentWorksheet(spanishData,"student")
+        student_spanish_marks=get_students_marks()
+        spanish_data=[int(marks) for marks in studentSpanishMarks]
+        update_student_worksheet(spanishData,"student")
     else:
         print("Invalid choice, it has to be in between 1 and 4, no zeros or negative values are allowed")
     
