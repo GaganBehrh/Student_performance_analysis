@@ -88,13 +88,14 @@ def student_total_score():
                 max=new_list[score]
                 avg=max/(len(student))
                 name=students
+                maxScoreIndex=score+1
                 if(avg<65):
                     grade='C'
                 elif(avg<75 and avg>65):
                     grade='B'
                 else:
                     grade='A'
-    print(f"Here are the details of the topper of the class: {name}, Max score :{max}, Percentage:{round(avg)}%, Grade:{grade}")
+    print(f"Here are the details of the topper of the class: {name},student{maxScoreIndex} Max score :{max}, Percentage:{round(avg)}%, Grade:{grade}")
         
           
     
