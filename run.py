@@ -21,23 +21,13 @@ def get_students_marks():
     data_str3 = int(input("Enter your data here for Racheal: "))
     data_str4 = int(input("Enter your data here for Monica: "))
     data_str5 = int(input("Enter your data here for Christine: "))
-   # if data_str1>100 or data_str1<0:
-    #    print("Data not valid, it cannot be negative or greater than 100, please restart")
-    #elif data_str2>100 or data_str2<0:
-     #   print("Data not valid, it cannot be negative or greater than 100, please restart")
-    #elif data_str3>100 or data_str3<0:
-     #   print("Data not valid, it cannot be negative or greater than 100, please restart")
-    #elif data_str4>100 or data_str4<0:
-     #   print("Data not valid, it cannot be negative or greater than 100, please restart")
-    #elif data_str5>100 or data_str5<0:
-     #   print("Data not valid, it cannot be negative or greater than 100, please restartt")   */
     sales_data=[]
     sales_data.append(data_str1)
     sales_data.append(data_str2)
     sales_data.append(data_str3)
     sales_data.append(data_str4)
     sales_data.append(data_str5)
-    print(f"Updated the datasheet,the data you entered is {sales_data}")
+    print(f"The data you entered is {sales_data}")
     return sales_data         
 
 def update_student_worksheet(data,worksheet):
@@ -54,8 +44,9 @@ def update_student_worksheet(data,worksheet):
             print("Invalid values added, it should lie in betwwen zero and humdred, please restart and the datasheet wont be updated")
             break
     if(flag==True):
+        print("You entered the valid values")
         update_worksheet.append_row(data)
-        print("Here is the updated data")
+        print("Hence,Here is the updated data")
         student_data=SHEET.worksheet("student").get_all_values()
         print(student_data)
 
@@ -121,5 +112,5 @@ def main():
         spanish_data=[int(marks) for marks in  student_spanish_marks]
         update_student_worksheet(spanish_data,"student")
     else:
-        print("Invalid choice, it has to be in between 1 and 4, no zeros or negative values are allowed")  
+        print("Invalid choice, it has to be in between 1 and 3, no zeros or negative values are allowed")  
 main()
