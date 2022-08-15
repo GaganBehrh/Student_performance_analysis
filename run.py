@@ -44,15 +44,20 @@ def update_student_worksheet(data,worksheet):
     """
     to update the worksheet
     """
+    flag=False
     update_worksheet=SHEET.worksheet(worksheet)
     for entries in data:
         if(entries>0 and entries<100 ):
-            update_worksheet.append_row(data)
+            flag=True
         else:
-            print("Invalid values")
-    print("Here is the updated data")
-    student_data=SHEET.worksheet("student").get_all_values()
-    print(student_data)
+            flag=False
+            print("Invalid values added, it should lie in betwwen zero and humdred, please restart and the datasheet wont be updated")
+            break
+    if(flag==True):
+        update_worksheet.append_row(data)
+        print("Here is the updated data")
+        student_data=SHEET.worksheet("student").get_all_values()
+        print(student_data)
 
 
 def show_data():
