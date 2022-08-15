@@ -69,6 +69,7 @@ def student_total_score():
     #to get the number of students
     student_data=SHEET.worksheet("student").get_all_values()
     num_students = len(student_data[0])
+    print(student_data[0])
     new_list = []
     for i in range(0, num_students):
         student = []
@@ -79,19 +80,21 @@ def student_total_score():
         new_list.append(sum(student))
     print(new_list)
     max=new_list[0]
+    name=""
     maxScoreIndex=0
-    for score in range(0,len(new_list)):
-        if(max<=new_list[score]):
-          max=new_list[score]
-          avg=max/(len(student))
-          maxScoreIndex=score+1
-          if(avg<65):
-            grade='C'
-          elif(avg<75 and avg>65):
-            grade='B'
-          else:
-            grade='A'
-    print(f"Here are the details of the topper of the class: student{maxScoreIndex}, Max score :{max}, Percentage:{round(avg)}%, Grade:{grade}")
+    for students in student_data[0]:
+        for score in range(0,len(new_list)):
+            if(max<=new_list[score]):
+                max=new_list[score]
+                avg=max/(len(student))
+                name=students
+                if(avg<65):
+                    grade='C'
+                elif(avg<75 and avg>65):
+                    grade='B'
+                else:
+                    grade='A'
+    print(f"Here are the details of the topper of the class: {name}, Max score :{max}, Percentage:{round(avg)}%, Grade:{grade}")
         
           
     
