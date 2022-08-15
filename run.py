@@ -46,9 +46,10 @@ def update_student_worksheet(data,worksheet):
     """
     update_worksheet=SHEET.worksheet(worksheet)
     for entries in data:
-        if(entries<100 and entries>=0):
-            continue
-        update_worksheet.append_row(data)
+        if(entries>0 and entries<100 ):
+            update_worksheet.append_row(data)
+        else:
+            print("Invalid values")
     print("Here is the updated data")
     student_data=SHEET.worksheet("student").get_all_values()
     print(student_data)
