@@ -38,20 +38,19 @@ def get_students_marks():
     sales_data.append(data_str4)
     sales_data.append(data_str5)
     print(f"Updated the datasheet,the data you entered is {sales_data}")
-    return sales_data
-
-print("value should be greater than 0")
-       
-            
+    return sales_data         
 def update_student_worksheet(data,worksheet):
     """
     to update the worksheet
     """
     update_worksheet=SHEET.worksheet(worksheet)
-    update_worksheet.append_row(data)
+    for entries in data:
+        if(entries<100 and entries>=0):
+            update_worksheet.append_row(data)
     print("Here is the updated data")
     student_data=SHEET.worksheet("student").get_all_values()
     print(student_data)
+
 
 def show_data():
     """
@@ -114,6 +113,5 @@ def main():
         spanish_data=[int(marks) for marks in  student_spanish_marks]
         update_student_worksheet(spanish_data,"student")
     else:
-        print("Invalid choice, it has to be in between 1 and 4, no zeros or negative values are allowed")
-    
+        print("Invalid choice, it has to be in between 1 and 4, no zeros or negative values are allowed")  
 main()
