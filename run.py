@@ -39,6 +39,7 @@ def get_students_marks():
     sales_data.append(data_str5)
     print(f"Updated the datasheet,the data you entered is {sales_data}")
     return sales_data         
+
 def update_student_worksheet(data,worksheet):
     """
     to update the worksheet
@@ -46,7 +47,8 @@ def update_student_worksheet(data,worksheet):
     update_worksheet=SHEET.worksheet(worksheet)
     for entries in data:
         if(entries<100 and entries>=0):
-            update_worksheet.append_row(data)
+            continue
+        update_worksheet.append_row(data)
     print("Here is the updated data")
     student_data=SHEET.worksheet("student").get_all_values()
     print(student_data)
