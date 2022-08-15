@@ -37,7 +37,7 @@ def get_students_marks():
     sales_data.append(data_str3)
     sales_data.append(data_str4)
     sales_data.append(data_str5)
-    print(f"The data you entered is {sales_data}")
+    print(f"Updated the datasheet,the data you entered is {sales_data}")
     return sales_data
 
 print("value should be greater than 0")
@@ -101,22 +101,18 @@ def main():
     print("Welcome to Student performance analysis")
     print("What would like to perform?")
     print("1.See the existing Marksheet")
-    print("2.Enter New Data")
-    print("3.Get Averages/percentage for the students and know the grade of the student")
-    print("4.Show updated results")
+    print("2.Get Averages/percentage for the students and know the grade of the student")
+    print("3. Enter the data and show the updated results")
     choice=int(input("Please Enter your choice"))
     total_student_score=[]
     if(choice==1):
-        show_data()
+        show_data()  
     elif (choice==2):
-        studentSpanishMarks=get_students_marks() 
-        spanishData=[int(marks) for marks in studentSpanishMarks]
-    elif (choice==3):
         student_total_score()
-    elif (choice==4):
+    elif (choice==3):
         student_spanish_marks=get_students_marks()
-        spanish_data=[int(marks) for marks in studentSpanishMarks]
-        update_student_worksheet(spanishData,"student")
+        spanish_data=[int(marks) for marks in  student_spanish_marks]
+        update_student_worksheet(spanish_data,"student")
     else:
         print("Invalid choice, it has to be in between 1 and 4, no zeros or negative values are allowed")
     
