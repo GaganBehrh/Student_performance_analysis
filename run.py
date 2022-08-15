@@ -21,16 +21,16 @@ def get_students_marks():
     data_str3 = int(input("Enter your data here for Racheal: "))
     data_str4 = int(input("Enter your data here for Monica: "))
     data_str5 = int(input("Enter your data here for Christine: "))
-    if data_str1>100 or data_str1<0:
-        print("Data not valid, it cannot be negative or greater than 100, please restart")
-    elif data_str2>100 or data_str2<0:
-        print("Data not valid, it cannot be negative or greater than 100, please restart")
-    elif data_str3>100 or data_str3<0:
-        print("Data not valid, it cannot be negative or greater than 100, please restart")
-    elif data_str4>100 or data_str4<0:
-        print("Data not valid, it cannot be negative or greater than 100, please restart")
-    elif data_str5>100 or data_str5<0:
-        print("Data not valid, it cannot be negative or greater than 100, please restartt")   
+   # if data_str1>100 or data_str1<0:
+    #    print("Data not valid, it cannot be negative or greater than 100, please restart")
+    #elif data_str2>100 or data_str2<0:
+     #   print("Data not valid, it cannot be negative or greater than 100, please restart")
+    #elif data_str3>100 or data_str3<0:
+     #   print("Data not valid, it cannot be negative or greater than 100, please restart")
+    #elif data_str4>100 or data_str4<0:
+     #   print("Data not valid, it cannot be negative or greater than 100, please restart")
+    #elif data_str5>100 or data_str5<0:
+     #   print("Data not valid, it cannot be negative or greater than 100, please restartt")   */
     sales_data=[]
     sales_data.append(data_str1)
     sales_data.append(data_str2)
@@ -100,15 +100,15 @@ def student_total_score():
             grade='B'
           else:
             grade='A'
-    print(f"Here are the details of the topper of the class: student{maxScoreIndex}, Max score :{max}, Percentage:{avg}%, Grade:{grade}")
+    print(f"Here are the details of the topper of the class: student{maxScoreIndex}, Max score :{max}, Percentage:{round(avg)}%, Grade:{grade}")
         
           
     
 def main():
     print("Welcome to Student performance analysis")
     print("What would like to perform?")
-    print("1.See the existing Marksheet")
-    print("2.Get Averages/percentage for the students and know the grade of the student")
+    print("1. See the existing Marksheet")
+    print("2. Get Averages/percentage for the students and know the grade of the student")
     print("3. Enter the data and show the updated results")
     choice=int(input("Please Enter your choice"))
     total_student_score=[]
