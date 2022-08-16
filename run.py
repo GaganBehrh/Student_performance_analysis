@@ -17,25 +17,28 @@ SHEET = GSPREAD_CLIENT.open('Student_analysis')
 
 
 def get_students_marks():
-    print("Please enter the marks for 5 students individually")
-    data_str1 = int(input("Enter your data here for Joe:"))
-    data_str2 = int(input("Enter your data here for Ross: "))
-    data_str3 = int(input("Enter your data here for Racheal: "))
-    data_str4 = int(input("Enter your data here for Monica: "))
-    data_str5 = int(input("Enter your data here for Christine: "))
+    """
+    gets the input from the user
+    """
+    print("\nPlease enter the marks for 5 students individually\n")
+    data_str1 = int(input("Enter your data here for Joe:\n"))
+    data_str2 = int(input("Enter your data here for Ross:\n "))
+    data_str3 = int(input("Enter your data here for Racheal:\n "))
+    data_str4 = int(input("Enter your data here for Monica:\n "))
+    data_str5 = int(input("Enter your data here for Christine:\n "))
     sales_data = []
     sales_data.append(data_str1)
     sales_data.append(data_str2)
     sales_data.append(data_str3)
     sales_data.append(data_str4)
     sales_data.append(data_str5)
-    print(f"The data you entered is {sales_data}")
+    print(f"\nThe data you entered is \n {sales_data}")
     return sales_data
 
 
 def update_student_worksheet(data, worksheet):
     """
-    to update the worksheet
+    updates the worksheet
     """
     flag = False
     update_worksheet = SHEET.worksheet(worksheet)
@@ -44,35 +47,34 @@ def update_student_worksheet(data, worksheet):
             flag = True
         else:
             flag = False
-            print("Invalid values added, it should lie in betwwen zero and hundred")
+            print("\nInvalid values added, it should lie in between zero and hundred\n")
             break
     if(flag == True):
-        print("You entered the valid values")
+        print("\nYou entered the valid values")
         update_worksheet.append_row(data)
-        print("Hence,Here is the updated data")
+        print("Hence, Here is the updated data")
         student_data = SHEET.worksheet("student").get_all_values()
         print(student_data)
 
 
 def show_data():
     """
-    to show the existing data
+    shows the existing data
     """
     student_data = SHEET.worksheet("student").get_all_values()
-    print("Here is the existing data")
+    print("Here is the existing data\n")
     print(student_data)
 
 
 def student_total_score():
     """
-    to get the entries from each column and calculate the sum of marks for each student
+    gets the entries from each column and calculate the sum of marks for each student
     """
-    print("Here are the total marks obtained by each student")
+    print("\nHere are the total marks obtained by each student\n")
     grade = ''
     # to get the number of students
     student_data = SHEET.worksheet("student").get_all_values()
     num_students = len(student_data[0])
-    print(student_data[0])
     new_list = []
     for i in range(0, num_students):
         student = []
@@ -100,17 +102,17 @@ def student_total_score():
                 else:
                     grade = 'A'
     print(
-        f"Here are the details of the topper of the class:\n{students[maxScoreIndex]} Max score :{max}, Percentage:{round(avg)}%, Grade:{grade}")
+        f"\nHere are the details of the topper of the class:\n\n{students[maxScoreIndex]} Max score :{max}, Percentage:{round(avg)}%, Grade:{grade}")
 
 
 def main():
     while(True):
-        print("Welcome to Student performance analysis")
-        print("What would like to perform?")
-        print("1. See the existing Marksheet")
+        print("\nWelcome to Student performance analysis\n")
+        print("What would like to perform?\n")
+        print("1. See the existing Marksheet\n")
         print(
-            "2. Get Averages/percentage for the students and know the grade of the student")
-        print("3. Enter the data and show the updated results")
+            "2. Get Averages/percentage for the students and know the grade of the student\n")
+        print("3. Enter the data and show the updated results\n")
         choice = int(input("Please Enter your choice \n"))
         total_student_score = []
         if(choice == 1):
@@ -122,11 +124,11 @@ def main():
             spanish_data = [int(marks) for marks in student_spanish_marks]
             update_student_worksheet(spanish_data, "student")
         elif(choice == 4):
-            print("End of the program,please restart")
+            print("End of the program,please restart\n")
             break
         else:
             print(
-                "Invalid choice, it has to be in between 1 and 3, no zeros or negative values are allowed")
+                "Invalid choice, it has to be in between 1 and 3, no zeros or negative values are allowed\n")
 
 
 main()
