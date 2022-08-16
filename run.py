@@ -44,7 +44,7 @@ def update_student_worksheet(data, worksheet):
             flag = True
         else:
             flag = False
-            print("Invalid values added, it should lie in betwwen zero and humdred, please restart and the datasheet wont be updated")
+            print("Invalid values added, it should lie in betwwen zero and hundred")
             break
     if(flag == True):
         print("You entered the valid values")
@@ -104,24 +104,29 @@ def student_total_score():
 
 
 def main():
-    print("Welcome to Student performance analysis")
-    print("What would like to perform?")
-    print("1. See the existing Marksheet")
-    print("2. Get Averages/percentage for the students and know the grade of the student")
-    print("3. Enter the data and show the updated results")
-    choice = int(input("Please Enter your choice \n"))
-    total_student_score = []
-
-    if(choice == 1):
-        show_data()
-    elif (choice == 2):
-        student_total_score()
-    elif (choice == 3):
-        student_spanish_marks = get_students_marks()
-        spanish_data = [int(marks) for marks in student_spanish_marks]
-        update_student_worksheet(spanish_data, "student")
-    else:
-        print("Invalid choice, it has to be in between 1 and 3, no zeros or negative values are allowed")
+    while(True):
+        print("Welcome to Student performance analysis")
+        print("What would like to perform?")
+        print("1. See the existing Marksheet")
+        print(
+            "2. Get Averages/percentage for the students and know the grade of the student")
+        print("3. Enter the data and show the updated results")
+        choice = int(input("Please Enter your choice \n"))
+        total_student_score = []
+        if(choice == 1):
+            show_data()
+        elif (choice == 2):
+            student_total_score()
+        elif (choice == 3):
+            student_spanish_marks = get_students_marks()
+            spanish_data = [int(marks) for marks in student_spanish_marks]
+            update_student_worksheet(spanish_data, "student")
+        elif(choice == 4):
+            print("End of the program,please restart")
+            break
+        else:
+            print(
+                "Invalid choice, it has to be in between 1 and 3, no zeros or negative values are allowed")
 
 
 main()
