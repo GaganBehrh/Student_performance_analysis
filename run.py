@@ -55,7 +55,7 @@ def update_student_worksheet(data, worksheet):
             flag = False
             print("\nInvalid values added, it should lie in between zero and hundred\n")
             break
-    if(flag == True):
+    if(flag):
         print("\nYou entered the valid values")
         update_worksheet.append_row(data)
         print("Hence, Here is the updated data")
