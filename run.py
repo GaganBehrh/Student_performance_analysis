@@ -1,8 +1,6 @@
 import gspread
 from google.oauth2.service_account import Credentials
-from pandas import ExcelWriter
-from pandas import ExcelFile
-import pandas as pd
+from tabulate import tabulate
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -21,6 +19,14 @@ def get_students_marks():
     gets the input from the user
     """
     print("\nPlease enter the marks for 5 students individually\n")
+   # try:
+    # data_str1 = int(input("Enter your data here for Joe:\n"))
+    #data_str2 = int(input("Enter your data here for Ross:\n "))
+    #data_str3 = int(input("Enter your data here for Racheal:\n "))
+    #data_str4 = int(input("Enter your data here for Monica:\n "))
+    #data_str5 = int(input("Enter your data here for Christine:\n "))
+    # except ValueError as ve:
+    #print(f'You entered an incorrect value, which is not a number.')
     data_str1 = int(input("Enter your data here for Joe:\n"))
     data_str2 = int(input("Enter your data here for Ross:\n "))
     data_str3 = int(input("Enter your data here for Racheal:\n "))
@@ -54,7 +60,7 @@ def update_student_worksheet(data, worksheet):
         update_worksheet.append_row(data)
         print("Hence, Here is the updated data")
         student_data = SHEET.worksheet("student").get_all_values()
-        print(student_data)
+        print(tabulate(student_data))
 
 
 def show_data():
@@ -63,7 +69,7 @@ def show_data():
     """
     student_data = SHEET.worksheet("student").get_all_values()
     print("Here is the existing data\n")
-    print(student_data)
+    print(tabulate(student_data))
 
 
 def student_total_score():
@@ -106,6 +112,7 @@ def student_total_score():
 
 
 def main():
+
     while(True):
         print("\nWelcome to Student performance analysis\n")
         print("What would like to perform?\n")
@@ -113,6 +120,11 @@ def main():
         print(
             "2. Get Averages/percentage for the students and know the grade of the student\n")
         print("3. Enter the data and show the updated results\n")
+        # I tried but the local variable error for choice is appearing i dnt know how to handle
+        # try:
+        #   choice = int(input("Please Enter your choice \n"))
+        # except ValueError as ve:
+        #   print(f'You entered an incorrect value, which is not a number.')
         choice = int(input("Please Enter your choice \n"))
         total_student_score = []
         if(choice == 1):
