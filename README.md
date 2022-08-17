@@ -78,7 +78,7 @@ When you fix the class issue
 ## Deployment:
 This project was deployed using Code Institite's mock terminal for Heroku
 
-## steps for deployment
+## Steps for deployment
 1. Fork or clone this repository
 2. Create a  new Heroku App
 3. See the buildbacks to Python and NodeJS in that order
