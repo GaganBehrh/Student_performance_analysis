@@ -51,6 +51,7 @@ With this feature , user can see the existing data in a form of table on the mar
 
 Feature 2: Get Averages/percentage for the students 
 Here the user can choose to obtain the sum, percentage and grade of the student with maximum score
+
 ![image](https://user-images.githubusercontent.com/63474017/185103371-dc1676cd-80e5-45d6-a90f-437f7395f8c6.png)
 
 Feature 3:With this feature user can enter the marks student wise and update the result directly into the worksheet and is also able to see the recently added row with the existing one on the terminal
