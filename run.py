@@ -29,10 +29,10 @@ def get_students_marks():
     # except ValueError as ve:
     # print(f'You entered an incorrect value, which is not a number.')
     data_str1 = int(input("Enter your data here for Joe:\n"))
-    data_str2 = int(input("Enter your data here for Ross:\n "))
-    data_str3 = int(input("Enter your data here for Racheal:\n "))
-    data_str4 = int(input("Enter your data here for Monica:\n "))
-    data_str5 = int(input("Enter your data here for Christine:\n "))
+    data_str2 = int(input("Enter your data here for Ross:\n"))
+    data_str3 = int(input("Enter your data here for Racheal:\n"))
+    data_str4 = int(input("Enter your data here for Monica:\n"))
+    data_str5 = int(input("Enter your data here for Christine:\n"))
     sales_data = []
     sales_data.append(data_str1)
     sales_data.append(data_str2)
@@ -116,18 +116,21 @@ def student_total_score():
 def main():
     """used to call the other functions"""
     while(True):
-        print("\nWelcome to Student performance analysis\n")
+        print("\n---------------------------------------")
+        print("Welcome to Student performance analysis")
+        print("---------------------------------------")
         print("What would like to perform?\n")
         print("1. See the existing Marksheet\n")
         print(
             "2. Get Averages/percentage for the students \n")
         print("3. Enter the data and show the updated results\n")
+        print("---------------------------------------\n")
         # I tried but the local variable error for choice is appearing i dnt know how to handle
         # try:
         #   choice = int(input("Please Enter your choice \n"))
         # except ValueError as ve:
         #   print(f'You entered an incorrect value, which is not a number.')
-        choice = int(input("Please Enter your choice \n"))
+        choice = int(input("Please Enter your choice\n"))
         total_student_score = []
         if(choice == 1):
             show_data()
