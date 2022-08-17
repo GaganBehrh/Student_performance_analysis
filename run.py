@@ -19,14 +19,15 @@ def get_students_marks():
     gets the input from the user
     """
     print("\nPlease enter the marks for 5 students individually\n")
+    # how to access the variables out of the try block
    # try:
     # data_str1 = int(input("Enter your data here for Joe:\n"))
-    #data_str2 = int(input("Enter your data here for Ross:\n "))
-    #data_str3 = int(input("Enter your data here for Racheal:\n "))
-    #data_str4 = int(input("Enter your data here for Monica:\n "))
-    #data_str5 = int(input("Enter your data here for Christine:\n "))
+    # data_str2 = int(input("Enter your data here for Ross:\n "))
+    # data_str3 = int(input("Enter your data here for Racheal:\n "))
+    # data_str4 = int(input("Enter your data here for Monica:\n "))
+    # data_str5 = int(input("Enter your data here for Christine:\n "))
     # except ValueError as ve:
-    #print(f'You entered an incorrect value, which is not a number.')
+    # print(f'You entered an incorrect value, which is not a number.')
     data_str1 = int(input("Enter your data here for Joe:\n"))
     data_str2 = int(input("Enter your data here for Ross:\n "))
     data_str3 = int(input("Enter your data here for Racheal:\n "))
@@ -53,7 +54,7 @@ def update_student_worksheet(data, worksheet):
             flag = True
         else:
             flag = False
-            print("\nInvalid values added, it should lie in between zero and hundred\n")
+            print("\nInvalid values added\n")
             break
     if(flag):
         print("\nYou entered the valid values")
@@ -74,9 +75,9 @@ def show_data():
 
 def student_total_score():
     """
-    gets the entries from each column and calculate the sum of marks for each student
+    calculates the sum, grade of marks for each student
     """
-    print("\nHere are the names and the total marks obtained by each student\n")
+    print("\nNames and the total_marks of each student\n")
     grade = ''
     # to get the number of students
     student_data = SHEET.worksheet("student").get_all_values()
@@ -109,17 +110,17 @@ def student_total_score():
                 else:
                     grade = 'A'
     print(
-        f"\nHere are the details of the topper of the class:\n\n{students[maxScoreIndex]} Max score :{max}, Percentage:{round(avg)}%, Grade:{grade}")
+        f"\n{students[maxScoreIndex]} Percentage:{round(avg)}%, Grade:{grade}")
 
 
 def main():
-
+    """used to call the other functions"""
     while(True):
         print("\nWelcome to Student performance analysis\n")
         print("What would like to perform?\n")
         print("1. See the existing Marksheet\n")
         print(
-            "2. Get Averages/percentage for the students and know the grade of the student\n")
+            "2. Get Averages/percentage for the students \n")
         print("3. Enter the data and show the updated results\n")
         # I tried but the local variable error for choice is appearing i dnt know how to handle
         # try:
@@ -137,11 +138,10 @@ def main():
             spanish_data = [int(marks) for marks in student_spanish_marks]
             update_student_worksheet(spanish_data, "student")
         elif(choice == 4):
-            print("End of the program,please restart\n")
+            print("End of the program, please restart\n")
             break
         else:
-            print(
-                "Invalid choice, it has to be in between 1 and 3, no zeros or negative values are allowed\n")
+            print("Invalid choice, it has to be in between 1 and 3\n")
 
 
 main()

@@ -50,7 +50,7 @@ class StudentMarks:
         updates the worksheet
         """
         flag = False
-        update_worksheet = self.SHEET.worksheet(self.worksheet)
+        update_worksheet = SHEET.worksheet(self.worksheet)
         for entries in data:
             if(entries > 0 and entries < 100):
                 flag = True
