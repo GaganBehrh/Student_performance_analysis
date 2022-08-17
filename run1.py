@@ -50,7 +50,7 @@ class StudentMarks:
         updates the worksheet
         """
         flag = False
-        update_worksheet = SHEET.worksheet(self.worksheet)
+        update_worksheet = self.SHEET.worksheet(self.worksheet)
         for entries in data:
             if(entries > 0 and entries < 100):
                 flag = True
@@ -63,7 +63,8 @@ class StudentMarks:
             print("\nYou entered the valid values")
             update_worksheet.append_row(data)
             print("Hence, Here is the updated data")
-            student_data = self.SHEET.worksheet("student").get_all_values()
+            student_data = self.SHEET.worksheet(
+                self.worksheet).get_all_values()
             print(tabulate(student_data))
 
     def show_data(self):

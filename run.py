@@ -76,11 +76,12 @@ def student_total_score():
     """
     gets the entries from each column and calculate the sum of marks for each student
     """
-    print("\nHere are the total marks obtained by each student\n")
+    print("\nHere are the names and the total marks obtained by each student\n")
     grade = ''
     # to get the number of students
     student_data = SHEET.worksheet("student").get_all_values()
     num_students = len(student_data[0])
+    print(student_data[0])
     new_list = []
     for i in range(0, num_students):
         student = []
