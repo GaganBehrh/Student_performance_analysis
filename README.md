@@ -29,3 +29,35 @@ The deployment terminal is set to 80 columns by 24 rows. That means that each li
 
 -----
 Happy coding!
+Happy coding!
+
+### Student_Performance_Analysis
+
+Student Performance analysis is the Python terminal analysis of the student receiving the maximum marks garde and score among differebt students
+PUT A LINK FROM AM I RESPONSIVE FROM HERE
+## Scope
+This project can be used by different academic schools, teachers principals to evaluate the performance of the students
+
+## How to use
+The user is welcome with the welcome message where he is indicated that he can do the analysis of the marks of the students and henceforth evalutae the performance. He can do it choosing it from three different options presented on the terminal and give an input
+
+![image](https://user-images.githubusercontent.com/63474017/185102272-668f7a70-b2aa-44ba-a207-655d3cb1132e.png)
+
+## Features
+
+Feature 1: See the existing marksheet
+With this feature , user can see the existing data in a form of table on the marksheet with the name of the students on the top and corresponding marks of respective student in each column, in this case student analysis google spreadsheet
+![image](https://user-images.githubusercontent.com/63474017/185103022-162bf476-6202-4627-bef3-7879613e4ea9.png)
+
+Feature 2: Get Averages/percentage for the students 
+Here the user can choose to obtain the sum, percentage and grade of the student with maximum score
+![image](https://user-images.githubusercontent.com/63474017/185103371-dc1676cd-80e5-45d6-a90f-437f7395f8c6.png)
+
+Feature 3:With this feature user can enter the marks student wise and update the result directly into the worksheet and is also able to see the recently added row with the existing one on the terminal
+
+
+
+
+
+
+Pu details about data sheet as well
