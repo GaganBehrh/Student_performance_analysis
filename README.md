@@ -63,7 +63,7 @@ Feature 3:With this feature user can enter the marks student wise and update the
 In case invalid data is added for example negative or values greater than 100 than the Error message is displayed
 ![image](https://user-images.githubusercontent.com/63474017/185105114-f9a90442-4ae2-4432-98cc-03584a44c153.png)
 
-### Google Spreadsheet
+## Google Spreadsheet
 The following google spreadsheet was used to carry out the student performance analysis
 Link: https://docs.google.com/spreadsheets/d/179vDqBF4_Rv658tg0D_gaxc_WKxZBBC1_yv1GR5huKs/edit#gid=0
 ![image](https://user-images.githubusercontent.com/63474017/185106480-e3039041-491c-4b36-83c1-a14548958975.png)
@@ -71,14 +71,14 @@ Link: https://docs.google.com/spreadsheets/d/179vDqBF4_Rv658tg0D_gaxc_WKxZBBC1_y
 Data Model:
 When you fix the class issue
 
-### Testing/Validator Testing:
+## Testing/Validator Testing:
 1. Passed the code througha PEP8 linter and confirmed there are no problems
 2. Tested in local terminal and Code insitute Heroku terminal
 
-### Deployment:
+## Deployment:
 This project was deployed using Code Institite's mock terminal for Heroku
 
-### steps for deployment
+## steps for deployment
 1. Fork or clone this repository
 2. Create a  new Heroku App
 3. See the buildbacks to Python and NodeJS in that order
@@ -87,8 +87,8 @@ This project was deployed using Code Institite's mock terminal for Heroku
 
 
 
-### Credits
-1. Mentor and slacl community from code institute
+## Credits
+1. Mentor and slack community from code institute
 2. Inspiration of this project comes fom LOVE_SANDWICHES PROJECT
 
 
