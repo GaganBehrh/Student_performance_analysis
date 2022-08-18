@@ -69,7 +69,8 @@ Link: https://docs.google.com/spreadsheets/d/179vDqBF4_Rv658tg0D_gaxc_WKxZBBC1_y
 ![image](https://user-images.githubusercontent.com/63474017/185106480-e3039041-491c-4b36-83c1-a14548958975.png)
 
 Data Model:
-When you fix the class issue
+I used StudentMarks Class as my model. It creates one instance through which we pass the worksheet.
+This class stores the worksheet and has methods to print the data in the existing worksheet, calculate the percentage and average of the students and display which student got maximum score and also a function where user can input the result and update the existing worksheet only if valid values are entered
 
 ## Testing/Validator Testing:
 1. Passed the code througha PEP8 linter and confirmed there are no problems
