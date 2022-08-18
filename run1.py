@@ -110,8 +110,8 @@ class StudentMarks:
                         grade = 'B'
                     else:
                         grade = 'A'
-        print(
-            f"\n{students[maxScoreIndex]} Percentage:{round(avg)}%, Grade:{grade}")
+        print(students[maxScoreIndex], "Percentage",
+              round(avg), "%", "Grade", grade)
 
 
 def main():
