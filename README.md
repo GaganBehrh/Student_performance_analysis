@@ -87,15 +87,15 @@ This class stores the worksheet and has methods to print the data in the existin
 Testing of User Stories:
 ## 
 1. As a user, I would like to be able to get a clear message about the kind of analysis i will be performing and what are my options 
-Pass: There is a clear welcome message in the beginning of the program along with the options of different functionalities to perform
+(a) Pass: There is a clear welcome message in the beginning of the program along with the options of different functionalities to perform
 2. As a user, I would like to see the entries from the worksheet on the terminal
-Pass: Option1 makes it possible
+(b) Pass: Option1 makes it possible
 3. As a user, I would like to know the total of each student
-Pass: Option2 makes it possible
+(c) Pass: Option2 makes it possible
 4. As a user, I would like to the student with maximum percentage and his/her respective grade
-Pass: Option2 makes it possibleh 
+(d) Pass: Option2 makes it possibleh 
 5. As a user, I would like to be able to enter the data entries and update the worksheet
-Pass: Option3 makes it possible
+(e) Pass: Option3 makes it possible
 
 ## Deployment:
 This project was deployed using Code Institite's mock terminal for Heroku
