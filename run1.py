@@ -6,16 +6,16 @@ from tabulate import tabulate
 class StudentMarks:
     def __init__(self, worksheet):
         self.worksheet = worksheet
-    SCOPE = [
-        "https://www.googleapis.com/auth/spreadsheets",
-        "https://www.googleapis.com/auth/drive.file",
-        "https://www.googleapis.com/auth/drive"
-    ]
+        SCOPE = [
+            "https://www.googleapis.com/auth/spreadsheets",
+            "https://www.googleapis.com/auth/drive.file",
+            "https://www.googleapis.com/auth/drive"
+        ]
 
-    CREDS = Credentials.from_service_account_file('creds.json')
-    SCOPED_CREDS = CREDS.with_scopes(SCOPE)
-    GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-    SHEET = GSPREAD_CLIENT.open('Student_analysis')
+        CREDS = Credentials.from_service_account_file('creds.json')
+        SCOPED_CREDS = CREDS.with_scopes(SCOPE)
+        GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
+        self.SHEET = GSPREAD_CLIENT.open('Student_analysis')
 
     def get_students_marks(self):
         """
@@ -23,19 +23,23 @@ class StudentMarks:
         """
         print("\nPlease enter the marks for 5 students individually\n")
         # how to access the variables out of the try block
-    # try:
+
+        while(True):
+            try:
+                data_str1 = int(input("Enter your data here for Joe:\n"))
+                data_str2 = int(input("Enter your data here for Ross:\n "))
+                data_str3 = int(input("Enter your data here for Racheal:\n "))
+                data_str4 = int(input("Enter your data here for Monica:\n "))
+                data_str5 = int(
+                    input("Enter your data here for Christine:\n "))
+                break
+            except ValueError:
+                print(f'You entered an incorrect value, which is not a number.')
         # data_str1 = int(input("Enter your data here for Joe:\n"))
-        # data_str2 = int(input("Enter your data here for Ross:\n "))
-        # data_str3 = int(input("Enter your data here for Racheal:\n "))
-        # data_str4 = int(input("Enter your data here for Monica:\n "))
-        # data_str5 = int(input("Enter your data here for Christine:\n "))
-        # except ValueError as ve:
-        # print(f'You entered an incorrect value, which is not a number.')
-        data_str1 = int(input("Enter your data here for Joe:\n"))
-        data_str2 = int(input("Enter your data here for Ross:\n"))
-        data_str3 = int(input("Enter your data here for Racheal:\n"))
-        data_str4 = int(input("Enter your data here for Monica:\n"))
-        data_str5 = int(input("Enter your data here for Christine:\n"))
+        # data_str2 = int(input("Enter your data here for Ross:\n"))
+        # data_str3 = int(input("Enter your data here for Racheal:\n"))
+        # data_str4 = int(input("Enter your data here for Monica:\n"))
+        # data_str5 = int(input("Enter your data here for Christine:\n"))
         sales_data = []
         sales_data.append(data_str1)
         sales_data.append(data_str2)
@@ -70,18 +74,18 @@ class StudentMarks:
         """
         shows the existing data
         """
-        student_data = self.SHEET.worksheet("student").get_all_values()
+        student_data = self.SHEET.worksheet(self.worksheet).get_all_values()
         print("Here is the existing data\n")
         print(tabulate(student_data))
 
     def student_total_score(self):
         """
-        calculates the sum, grade of marks for each student
+        Calculates the sum, grade of marks for each student
         """
         print("\nNames and the total_marks of each student\n")
         grade = ''
         # to get the number of students
-        student_data = self.SHEET.worksheet("student").get_all_values()
+        student_data = self.SHEET.worksheet(self.worksheet).get_all_values()
         num_students = len(student_data[0])
         print(student_data[0])
         new_list = []
@@ -117,10 +121,10 @@ class StudentMarks:
 def main():
     """used to call the other functions"""
     student_marks = StudentMarks("student")
+    print("\n---------------------------------------")
+    print("Welcome to Student performance analysis")
+    print("---------------------------------------")
     while(True):
-        print("\n---------------------------------------")
-        print("Welcome to Student performance analysis")
-        print("---------------------------------------")
         print("What would like to perform?\n")
         print("1. See the existing Marksheet\n")
         print(
@@ -128,11 +132,13 @@ def main():
         print("3. Enter the data and show the updated results\n")
         print("---------------------------------------\n")
         # I tried but the local variable error for choice is appearing i dnt know how to handle
-        # try:
-        #   choice = int(input("Please Enter your choice \n"))
-        # except ValueError as ve:
-        #   print(f'You entered an incorrect value, which is not a number.')
-        choice = int(input("Please Enter your choice\n"))
+        try:
+            choice = int(input("Please Enter your choice \n"))
+        except ValueError as ve:
+            print(
+                f'You entered an incorrect value, which is not a number,please enter a number to continue.')
+            continue
+        # choice = int(input("Please Enter your choice\n"))
         total_student_score = []
         if(choice == 1):
             student_marks.show_data()
