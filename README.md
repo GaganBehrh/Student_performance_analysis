@@ -43,6 +43,14 @@ The user is  shown the welcome message where he is indicated that he can do the 
 
 ![image](https://user-images.githubusercontent.com/63474017/185102272-668f7a70-b2aa-44ba-a207-655d3cb1132e.png)
 
+## User Stories
+1. As a user, I would like to be able to get a clear message about the kind of analysis i will be performing and what are my options 
+2. As a user, I would like to see the entries from the worksheet on the terminal
+3. As a user, I would like to know the total,  of each student
+4. As a user, I would like to the student with maximum percentage and his/her respective grade
+5. As a user, I would like to be able to enter the data entries and update the worksheet
+ 
+
 ## Features
 
 Feature 1: See the existing marksheet
@@ -75,6 +83,19 @@ This class stores the worksheet and has methods to print the data in the existin
 ## Testing/Validator Testing:
 1. Passed the code througha PEP8 linter and confirmed there are no problems
 2. Tested in local terminal and Code insitute Heroku terminal
+
+Testing of User Stories:
+## 
+1. As a user, I would like to be able to get a clear message about the kind of analysis i will be performing and what are my options 
+   Pass: There is a clear welcome message in the beginning of the program along with the options of different functionalities to perform
+2. As a user, I would like to see the entries from the worksheet on the terminal
+   Pass: Option1 makes it possible
+3. As a user, I would like to know the total of each student
+   Pass: Option2 makes it possible
+4. As a user, I would like to the student with maximum percentage and his/her respective grade
+   Pass: Option2 makes it possibleh 
+5. As a user, I would like to be able to enter the data entries and update the worksheet
+   Pass: Option3 makes it possible
 
 ## Deployment:
 This project was deployed using Code Institite's mock terminal for Heroku
