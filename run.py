@@ -34,7 +34,7 @@ class StudentMarks:
                     input("Enter your data here for Christine:\n "))
                 break
             except ValueError:
-                print(f'You entered an incorrect value, which is not a number.')
+                print(f'Incorrect value, must be a number.')
         sales_data = []
         sales_data.append(data_str1)
         sales_data.append(data_str2)
@@ -130,7 +130,7 @@ def main():
             choice = int(input("Please Enter your choice \n"))
         except ValueError:
             print(
-                f'You entered an incorrect value, which is not a number,please enter a number to continue.')
+                f'Incorrect value, must be a number.')
             continue
         total_student_score = []
         if(choice == 1):
