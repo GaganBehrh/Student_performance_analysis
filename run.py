@@ -44,7 +44,7 @@ class StudentMarks:
         print(f"\nThe data you entered is \n {sales_data}")
         return sales_data
 
-    def update_student_worksheet(self, data, controller):
+    def update_student_worksheet(self, data):
         """
         updates the worksheet
         """
@@ -126,14 +126,12 @@ def main():
             "2. Get Averages/percentage for the students \n")
         print("3. Enter the data and show the updated results\n")
         print("---------------------------------------\n")
-        # I tried but the local variable error for choice is appearing i dnt know how to handle
         try:
             choice = int(input("Please Enter your choice \n"))
-        except ValueError as ve:
+        except ValueError:
             print(
                 f'You entered an incorrect value, which is not a number,please enter a number to continue.')
             continue
-        # choice = int(input("Please Enter your choice\n"))
         total_student_score = []
         if(choice == 1):
             student_marks.show_data()
@@ -142,7 +140,7 @@ def main():
         elif (choice == 3):
             student_spanish_marks = student_marks.get_students_marks()
             spanish_data = [int(marks) for marks in student_spanish_marks]
-            student_marks.update_student_worksheet(spanish_data, "student")
+            student_marks.update_student_worksheet(spanish_data)
         elif(choice == 4):
             print("End of the program, please restart\n")
             break
