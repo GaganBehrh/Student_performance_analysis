@@ -19,7 +19,7 @@ class StudentMarks:
 
     def get_students_marks(self):
         """
-        gets the input from the user
+        Gets the input from the user
         """
         print("\nPlease enter the marks for 5 students individually\n")
         # how to access the variables out of the try block
@@ -46,7 +46,7 @@ class StudentMarks:
 
     def update_student_worksheet(self, data):
         """
-        updates the worksheet
+        Updates the worksheet
         """
         flag = False
         update_worksheet = self.SHEET.worksheet(self.worksheet)
@@ -67,7 +67,7 @@ class StudentMarks:
 
     def show_data(self):
         """
-        shows the existing data
+        Shows the existing data
         """
         student_data = self.SHEET.worksheet(self.worksheet).get_all_values()
         print("Here is the existing data\n")
@@ -114,7 +114,7 @@ class StudentMarks:
 
 
 def main():
-    """used to call the other functions"""
+    """ Calls the other functions"""
     student_marks = StudentMarks("student")
     print("\n---------------------------------------")
     print("Welcome to Student performance analysis")

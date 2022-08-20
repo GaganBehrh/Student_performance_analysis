@@ -50,7 +50,6 @@ This class stores the worksheet and has methods to print the data in the existin
 
 ## Testing/Validator Testing:
 1. Passed the code througha PEP8 linter and confirmed there are no problems
-image.png
 2. Tested in local terminal and Code insitute Heroku terminal
 
 Testing of User Stories:
