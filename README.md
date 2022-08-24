@@ -41,7 +41,7 @@ In case invalid data is added for example negative or values greater than 100 th
 
 ## Google Spreadsheet
 The following google spreadsheet was used to carry out the student performance analysis
-Link: https://docs.google.com/spreadsheets/d/179vDqBF4_Rv658tg0D_gaxc_WKxZBBC1_yv1GR5huKs/edit#gid=0
+Link: https://docs.google.com/spreadsheets/d/179vDqBF4_Rv658tg0D_gaxc_WKxZBBC1_yv1GR5huKs/edit?usp=sharing
 ![image](https://user-images.githubusercontent.com/63474017/185106480-e3039041-491c-4b36-83c1-a14548958975.png)
 
 Data Model:
@@ -92,4 +92,3 @@ This project was deployed using Code Institite's mock terminal for Heroku
 
 
 
-Pu details about data sheet as well
