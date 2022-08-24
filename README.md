@@ -2,7 +2,7 @@
 ### Student_Performance_Analysis
 
 Student Performance analysis is the Python terminal project for the student receiving the maximum marks grade and score among different students.The marks can be imported from the worksheet, all the entries can be displayed on the terminal and the worksheet can also receive the data entered from the terminal. The inspiration of this project comes from Love Sandwiches project
-PUT A LINK FROM AM I RESPONSIVE FROM HERE
+
 ## Scope
 This project can be used by different academic schools, teachers principals to evaluate the performance of the students. 
 
@@ -14,7 +14,7 @@ The user is  shown the welcome message where he is indicated that he can do the 
 ## User Stories
 1. As a user, I would like to be able to get a clear message about the kind of analysis i will be performing and what are my options 
 2. As a user, I would like to see the entries from the worksheet on the terminal
-3. As a user, I would like to know the total,  of each student
+3. As a user, I would like to know the total of each student
 4. As a user, I would like to the student with maximum percentage and his/her respective grade
 5. As a user, I would like to be able to enter the data entries and update the worksheet
  
@@ -26,7 +26,7 @@ With this feature , user can see the existing data in a form of table obtained f
 ![image](https://user-images.githubusercontent.com/63474017/185103022-162bf476-6202-4627-bef3-7879613e4ea9.png)
 
 Feature 2: Get Averages/percentage for the students 
-Here the user can choose to obtain the name, percentage and grade of the student with maximum score along wit the total of the marks obtained by each student
+Here the user can choose to obtain the name, percentage and grade of the student with maximum score along with the total of the marks obtained by each student
 
 ![image](https://user-images.githubusercontent.com/63474017/185103371-dc1676cd-80e5-45d6-a90f-437f7395f8c6.png)
 
@@ -46,10 +46,10 @@ Link: https://docs.google.com/spreadsheets/d/179vDqBF4_Rv658tg0D_gaxc_WKxZBBC1_y
 
 Data Model:
 I used StudentMarks Class as my model. It creates one instance through which we pass the worksheet.
-This class stores the worksheet and has methods to print the data in the existing worksheet, calculate the percentage and average of the students and display which student got maximum score and also a function where user can input the result and update the existing worksheet only if valid values are entered
+The class stores the worksheet and has methods to print the data in the existing worksheet, calculate the percentage and average of the students and display which student got maximum score and also a function where user can input the result and update the existing worksheet only if valid values are entered
 
 ## Testing/Validator Testing:
-1. Passed the code througha PEP8 linter and confirmed there are no problems
+1. Passed the code througha PEP8 linter and confirmed there are no problems 
 2. Tested in local terminal and Code insitute Heroku terminal
 
 Testing of User Stories:
