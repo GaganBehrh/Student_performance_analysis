@@ -125,6 +125,8 @@ def main():
         print(
             "2. Get Averages/percentage for the students \n")
         print("3. Enter the data and show the updated results\n")
+        print("4. Enter the input as 4 to exit \n")
+
         print("---------------------------------------\n")
         try:
             choice = int(input("Please Enter your choice \n"))
