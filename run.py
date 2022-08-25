@@ -20,6 +20,7 @@ class StudentMarks:
     def get_students_marks(self):
         """
         Gets the input from the user
+        and displays it to the terminal
         """
         print("\nPlease enter the marks for 5 students individually\n")
         # how to access the variables out of the try block
@@ -47,6 +48,7 @@ class StudentMarks:
     def update_student_worksheet(self, data):
         """
         Updates the worksheet
+        with the recent values entered by the user
         """
         flag = False
         update_worksheet = self.SHEET.worksheet(self.worksheet)
@@ -68,6 +70,7 @@ class StudentMarks:
     def show_data(self):
         """
         Shows the existing data
+        from the google spreadsheet
         """
         student_data = self.SHEET.worksheet(self.worksheet).get_all_values()
         print("Here is the existing data\n")
@@ -79,7 +82,6 @@ class StudentMarks:
         """
         print("\nNames and the total_marks of each student\n")
         grade = ''
-        # to get the number of students
         student_data = self.SHEET.worksheet(self.worksheet).get_all_values()
         num_students = len(student_data[0])
         print(student_data[0])
