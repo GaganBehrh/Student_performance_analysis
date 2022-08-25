@@ -5,6 +5,9 @@ from tabulate import tabulate
 
 class StudentMarks:
     def __init__(self, worksheet):
+        # Inspiration derived from and code borrowed from
+        # Love_Sandwiches project provided by the Code
+        # Institute to export the google spreadsheet """
         self.worksheet = worksheet
         SCOPE = [
             "https://www.googleapis.com/auth/spreadsheets",
