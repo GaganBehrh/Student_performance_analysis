@@ -61,7 +61,7 @@ Testing of User Stories:
 3. As a user, I would like to know the total of each student
 (c) Pass: Option2 makes it possible
 4. As a user, I would like to the student with maximum percentage and his/her respective grade
-(d) Pass: Option2 makes it possibleh 
+(d) Pass: Option2 makes it possible
 5. As a user, I would like to be able to enter the data entries and update the worksheet
 (e) Pass: Option3 makes it possible
 
