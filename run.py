@@ -52,6 +52,7 @@ class StudentMarks:
         Updates the worksheet
         with the recent values entered by the user
         """
+        # Inspiration derived from Love Sandwiches project
         flag = False
         update_worksheet = self.SHEET.worksheet(self.worksheet)
         for entries in data:
@@ -73,8 +74,8 @@ class StudentMarks:
         """
         Shows the existing data
         from the google spreadsheet
-        inspiration derived from Love Sandwitches project
         """
+        # Inspiration derived from Love Sandwiches project
         student_data = self.SHEET.worksheet(self.worksheet).get_all_values()
         print("Here is the existing data\n")
         print(tabulate(student_data))
@@ -82,8 +83,8 @@ class StudentMarks:
     def student_total_score(self):
         """
         Calculates the sum, grade of marks for each student
-        inspiration derived from Love Sandwitches project
         """
+        # Inspiration derived from Love Sandwiches project
         print("\nNames and the total_marks of each student\n")
         grade = ''
         student_data = self.SHEET.worksheet(self.worksheet).get_all_values()
