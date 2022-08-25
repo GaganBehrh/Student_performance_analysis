@@ -7,7 +7,7 @@ class StudentMarks:
     def __init__(self, worksheet):
         # Inspiration derived from and code borrowed from
         # Love_Sandwiches project provided by the Code
-        # Institute to export the google spreadsheet """
+        # Institute to export the google spreadsheet
         self.worksheet = worksheet
         SCOPE = [
             "https://www.googleapis.com/auth/spreadsheets",
@@ -73,6 +73,7 @@ class StudentMarks:
         """
         Shows the existing data
         from the google spreadsheet
+        inspiration derived from Love Sandwitches project
         """
         student_data = self.SHEET.worksheet(self.worksheet).get_all_values()
         print("Here is the existing data\n")
@@ -81,6 +82,7 @@ class StudentMarks:
     def student_total_score(self):
         """
         Calculates the sum, grade of marks for each student
+        inspiration derived from Love Sandwitches project
         """
         print("\nNames and the total_marks of each student\n")
         grade = ''
