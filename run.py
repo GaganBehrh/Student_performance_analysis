@@ -20,10 +20,9 @@ class StudentMarks:
     def get_students_marks(self):
         """
         Gets the input from the user
-        and displays it to the terminal
+        and displays it on the terminal
         """
         print("\nPlease enter the marks for 5 students individually\n")
-        # how to access the variables out of the try block
 
         while(True):
             try:
@@ -96,7 +95,7 @@ class StudentMarks:
         print(new_list)
         max = new_list[0]
         name = ""
-        maxScoreIndex = 0
+        max_score_index = 0
         students = student_data[0]
         for student_name in students:
             for score in range(0, len(new_list)):
@@ -104,14 +103,14 @@ class StudentMarks:
                     max = new_list[score]
                     avg = max/(len(student))
                     name = student_name
-                    maxScoreIndex = score
+                    max_score_index = score
                     if(avg < 65):
                         grade = 'C'
                     elif(avg < 75 and avg > 65):
                         grade = 'B'
                     else:
                         grade = 'A'
-        print(students[maxScoreIndex], "Percentage",
+        print(students[max_score_index], "Percentage",
               round(avg), "%", "Grade", grade)
 
 
